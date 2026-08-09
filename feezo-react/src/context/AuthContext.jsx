@@ -37,6 +37,13 @@ export function AuthProvider({ children }) {
   }, [loadAppUser]);
 
 // here
+  const login = async (rawId, password) => {
+  const id = rawId.trim().toLowerCase();
+  const email = id.includes('@') ? id : id + '@gmail.com';
+  const { data, error } = await signIn(email, password);
+  if (error) throw error;
+  return data;
+};
 
   const logout = async () => {
     await signOut();
