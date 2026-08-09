@@ -36,7 +36,7 @@ export function AuthProvider({ children }) {
     return () => sub.subscription.unsubscribe();
   }, [loadAppUser]);
 
-// here
+
   const login = async (rawId, password) => {
   const id = rawId.trim().toLowerCase();
   const email = id.includes('@') ? id : id + '@gmail.com';
