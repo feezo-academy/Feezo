@@ -14,7 +14,7 @@ export function AuthProvider({ children }) {
     const { data, error } = await supabase
       .from('app_users')
       .select('*')
-      .eq('auth_uid', authUser.id)
+      .eq('id', authUser.id)
       .maybeSingle();
     if (!error && data) {
       setAppUser(data);
@@ -36,11 +36,7 @@ export function AuthProvider({ children }) {
     return () => sub.subscription.unsubscribe();
   }, [loadAppUser]);
 
-  const login = async (email, password) => {
-    const { data, error } = await signIn(email, password);
-    if (error) throw error;
-    return data;
-  };
+// here
 
   const logout = async () => {
     await signOut();
