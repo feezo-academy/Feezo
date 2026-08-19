@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import LandingPage from './pages/Landing/LandingPage';
+import LandingPage from './pages/landing/LandingPage';
 import App from './App.jsx';
 
 // App.jsx owns its own <Routes> internally with absolute paths
